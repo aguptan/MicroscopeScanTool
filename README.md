@@ -69,4 +69,4 @@ To test scan logic without hardware movement, set `dry_run=True` in the `snake_l
 - Supports only 4x and 20x objective labels by default.
 
 ## Author
-Developed by Amal Guptan for the Shoykhet Lab. Contributions and suggestions welcome.
+Developed by Amal Guptan with the help of LLM for the Shoykhet Lab. Contributions and suggestions welcome.
