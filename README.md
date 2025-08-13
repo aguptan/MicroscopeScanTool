@@ -32,17 +32,26 @@ pip install pycromanager opencv-python numpy
 ## File Structure
 
 ```
-.
-├── main.py                    # Entry point: preview + GUI + scan logic
-├── camera_preview.py          # Live camera feed and white patch drawing
-├── user_input_gui.py          # Coordinate input + objective dropdown
-├── scan_logic.py              # Snake scan control + image capture
-├── white_balance_utils.py     # Frame correction + median computation
-├── shared_state.py            # Global camera state and patch info
-├── stage_controller.py        # XY movement with position tolerance
-├── logger.py                  # Scan folder and error logging
-├── metadata_writer.py         # FIJI tile metadata writer
+├── main.py                          # Entry point: launches live preview, GUI, and scanning logic
+├── microscope_scan_tool/            # Core package with all supporting functions
+│   ├── camera_preview.py             # Handles live camera feed display and white patch overlay
+│   ├── user_input_gui.py             # GUI for entering coordinates and selecting objectives
+│   ├── scan_logic.py                 # Controls snake-pattern scanning and image capture sequence
+│   ├── white_balance_utils.py        # Performs frame white-balance correction and median 
+│   ├── shared_state.py               # Stores global camera settings, patch info, and scan state
+│   ├── stage_controller.py           # Controls XY stage movement and enforces position 
+│   ├── logger.py                     # Handles scan folder creation and error logging
+│   └── metadata_writer.py            # Writes FIJI-compatible tile metadata (positions, overlap, 
+├── archive/                          # Deprecated/older versions of modules
+│   ├── camera_preview_depreciated.py
+│   ├── scan_logic_depreciated.py
+│   ├── user_input_gui_depreciated.py
+│   └── user_input_gui_depreciated2.py
+├── environment.yml                   # Conda environment for minimal project dependencies
+├── environment_full.yml              # Conda environment with full optional dependencies
+└── README.md                         # Project description, setup instructions, and usage guide
 ```
+
 ## Usage
 1. Run `main.py`
 2. A live preview window will open and a GUI will prompt you to enter:
